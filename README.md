@@ -30,14 +30,11 @@ class ListNode:
    def removeNthFromEnd(head, n):
       temp = ListNode(0, head)
       slow = fast = temp
-  
       for _ in range(n):
           fast = fast.next
-  
       while fast.next:
           slow = slow.next
           fast = fast.next
-  
       slow.next = slow.next.next
       return temp.next
 
